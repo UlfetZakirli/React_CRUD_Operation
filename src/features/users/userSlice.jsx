@@ -18,7 +18,7 @@ const userSlice = createSlice({
   reducers: {
     addUser: (state, action) => {
       state.push(action.payload);
-    //   console.log(action.payload);
+      //   console.log(action.payload);
     },
     editUser: (state, action) => {
       const { id, name, email } = action.payload;
@@ -38,7 +38,6 @@ const userSlice = createSlice({
         return state.filter((user) => user.id !== id);
       }
     },
-   
   },
 });
 

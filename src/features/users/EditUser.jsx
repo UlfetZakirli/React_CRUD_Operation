@@ -10,25 +10,25 @@ const EditUser = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const params = useParams();
-  const existingUser=users.filter((user)=>user.id===params.id)
-  const {name, email}=existingUser[0]
+  const existingUser = users.filter((user) => user.id === params.id);
+  const { name, email } = existingUser[0];
   const [values, setValues] = useState({
     name,
     email,
   });
   const handleEditUser = (id) => {
     setValues({
-      name:"",
-      email:""
+      name: "",
+      email: "",
     });
     dispatch(
       editUser({
-        id:params.id,
-        name:values.name,
-        email:values.email
+        id: params.id,
+        name: values.name,
+        email: values.email,
       })
-      );
-      navigate("/");
+    );
+    navigate("/");
   };
   return (
     <div className="mt-10 max-w-xl mx-auto">

@@ -1,9 +1,9 @@
 import { useState } from "react";
 import TextField from "../../components/TextField";
 import Button from "./../../components/Button";
-import { useDispatch } from 'react-redux';
+import { useDispatch } from "react-redux";
 import { addUser, saveToLocaleStorage } from "./userSlice";
-import {v4 as uuid} from "uuid"
+import { v4 as uuid } from "uuid";
 import { useNavigate } from "react-router-dom";
 
 const AddUser = () => {
@@ -11,18 +11,19 @@ const AddUser = () => {
     name: "",
     email: "",
   });
-const dispatch=useDispatch()
-const navigate=useNavigate()
-
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const handleAddUser = () => {
-    setValues({name:"", email:''})
-    dispatch(addUser({
-      id:uuid(),
-      name:values.name,
-      email:values.email
-    }))
-    navigate('/')
+    setValues({ name: "", email: "" });
+    dispatch(
+      addUser({
+        id: uuid(),
+        name: values.name,
+        email: values.email,
+      })
+    );
+    navigate("/");
   };
   return (
     <div className="mt-10 max-w-xl mx-auto">
