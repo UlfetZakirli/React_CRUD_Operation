@@ -9,11 +9,11 @@ function App() {
       <h1 className="text-center font-bold text-2xl text-gray-700 mb-4">
         CRUD with redux toolkit
       </h1>
-      <Routes>
-        <Route path='/' element={<UserList/>}/>
-        <Route path='/add-user' element={<AddUser/>}/>
-        <Route path='/edit-user/:id' element={<EditUser/>}/>
-      </Routes>
+  <Routes>
+    <Route path='/' element={<UserList/>}/>
+    <Route path='/add-user' element={<AddUser/>}/>
+    <Route path='/edit-user/:id' element={<EditUser/>}/>
+  </Routes>
     </div>
   );
 }
